@@ -82,13 +82,20 @@ Most founders break at least 4 of these. That's why their launch dies.
 1. [QUICKSTART.md](QUICKSTART.md). Guided path.
 2. Open [PROMPT.md](PROMPT.md). Copy the prompt into Claude or ChatGPT.
 3. Fill in your product. Get a draft.
+4. Run it through [ANTI-PATTERNS.md](ANTI-PATTERNS.md) before you ship.
 
 ### If you have 2 hours and you're serious
 1. Read the [5-beat formula](references/06-renat-5-beat-formula.md). The spine.
 2. Pick your archetype from [01-format-taxonomy.md](references/01-format-taxonomy.md).
 3. Find 3 launches in [corpus/](corpus/INDEX.md) that match yours. Study them.
-4. Pick a template from [templates/](templates/).
-5. Draft. Run the [pre-ship checklist](references/06-renat-5-beat-formula.md#pre-ship-checklist-renat-coded).
+4. Pick a template from [templates/](templates/). One per archetype.
+5. Draft. Run [SHIP-CHECKLIST.md](SHIP-CHECKLIST.md).
+
+### If your launch is 2+ weeks out
+Read [LAUNCH-WEEK-SCHEDULE.md](LAUNCH-WEEK-SCHEDULE.md). A real launch is 10+ posts over 14 days. Most founders ship one post and wonder why it died. Don't be that founder.
+
+### If you have questions
+[FAQ.md](FAQ.md). Covers consumer apps, PH launches, stealth reveals, tiny audiences, ghostwriters, and what to do when a launch fails.
 
 ### If you're using Claude Code
 Drop this repo into `~/.claude/skills/launch-guide/`. It auto-triggers when you ask for a launch post.
@@ -100,10 +107,14 @@ Drop this repo into `~/.claude/skills/launch-guide/`. It auto-triggers when you 
 ```
 launch-guide/
 ├── README.md                 You are here
+├── QUICKSTART.md             5-minute path through the repo
 ├── CHEATSHEET.md             One-pager. Print it.
-├── QUICKSTART.md             5-minute path
+├── SHIP-CHECKLIST.md         Printable launch-day checklist
+├── LAUNCH-WEEK-SCHEDULE.md   Day-by-day playbook (T-14 through T+14)
 ├── PROMPT.md                 5 copy-paste prompts (Claude/ChatGPT)
 ├── EXAMPLE.md                Worked example: blank page → ship-ready post
+├── ANTI-PATTERNS.md          Do-not-ship list
+├── FAQ.md                    Common questions
 ├── SOURCES.md                Clickable URL index of every launch
 ├── corpus/                   30+ verbatim launches deconstructed
 │   ├── INDEX.md              Browse by archetype
@@ -111,7 +122,13 @@ launch-guide/
 │   ├── 11-icon-kennan-davison.md     The rosetta stone
 │   └── ...                   17 more
 ├── references/               6 synthesis files (formula, hooks, CTAs, video integration)
-├── templates/                3 fill-in templates
+├── templates/                6 fill-in templates (one per archetype)
+│   ├── single-tweet-announcement.md
+│   ├── origin-thread.md
+│   ├── teardown-reveal-thread.md
+│   ├── fundraise-long-post.md
+│   ├── lead-magnet-upsell.md
+│   └── agency-amplification.md
 └── visuals/post-gallery.html Browse all launches with real founder avatars
 ```
 
