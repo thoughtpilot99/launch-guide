@@ -2,7 +2,7 @@
 
 **The repo I wish I had when founders kept asking me "the video is great, but what do I write to go with it?"**
 
-I'm Renat. I run [Represent Studio](https://representstudio.com). We ship launch videos for SaaS founders. Lovable. Bardeen. Crunched. Snowglobe. Humwork. Nozomio. Bilanc. ColdIQ. Dozens more.
+I'm Renat. I run [Represent Studio](https://representstudio.com). We ship launch videos for SaaS founders. Bardeen. Crunched. Snowglobe. Humwork. Nozomio. Bilanc. ColdIQ. Shadeform. MOVEdot. Atlog. Dozens more.
 
 Every founder we work with hits the same wall.
 
