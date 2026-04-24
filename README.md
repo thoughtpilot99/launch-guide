@@ -16,6 +16,37 @@ Free. MIT-licensed. Steal it.
 
 ---
 
+## How it works
+
+```mermaid
+flowchart TD
+    Start([🚀 Your launch is coming up]) --> Q1{What's the moment?}
+    Q1 -->|Day-of launch| A1[Single Tweet]
+    Q1 -->|Story is the asset| A2[Origin Thread]
+    Q1 -->|Tech reveal / build flex| A3[Teardown Thread]
+    Q1 -->|Fundraise announcement| A4[Long-Form Post]
+    Q1 -->|Free resource giveaway| A5[Lead Magnet]
+    Q1 -->|Client launch amplification| A6[Agency Post]
+
+    A1 & A2 & A3 & A4 & A5 & A6 --> Formula[The 5-Beat Formula<br/>Hook → Problem → Solution → How → CTA]
+    Formula --> Prompt[Drop into Claude or ChatGPT<br/>Get a draft in 60 seconds]
+    Prompt --> Audit[12-Point Pre-Ship Auditor<br/>Catches every anti-pattern]
+    Audit --> Ship[Ship<br/>Tue/Wed/Thu, 9am PT]
+    Ship --> Sprint[2-Hour Engagement Sprint]
+    Sprint --> Week[14-Day Launch Week Schedule]
+    Week --> Win([📈 A launch that compounds])
+
+    style Start fill:#0f1419,stroke:#1d9bf0,color:#fff,stroke-width:2px
+    style Win fill:#1d9bf0,stroke:#0f1419,color:#fff,stroke-width:2px
+    style Formula fill:#fefae0,stroke:#f5a623,stroke-width:2px
+    style Audit fill:#fefae0,stroke:#f5a623,stroke-width:2px
+    style Ship fill:#e8f5e9,stroke:#43a047
+    style Sprint fill:#e8f5e9,stroke:#43a047
+    style Week fill:#e8f5e9,stroke:#43a047
+```
+
+---
+
 ## What's inside
 
 I analyzed 300+ launch posts. The 30+ I learned the most from are deconstructed in this repo.
