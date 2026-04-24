@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Launch Post Gallery — The Playbook</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f7f9fa; color: #0f1419; padding: 40px 20px; }
+  .container { max-width: 1200px; margin: 0 auto; }
+  h1 { font-size: 36px; margin-bottom: 8px; }
+  .subtitle { color: #536471; margin-bottom: 32px; font-size: 16px; }
+  .filter-bar { background: white; padding: 16px; border-radius: 12px; margin-bottom: 24px; display: flex; gap: 8px; flex-wrap: wrap; }
+  .filter-btn { padding: 6px 14px; border: 1px solid #cfd9de; background: white; border-radius: 999px; cursor: pointer; font-size: 14px; }
+  .filter-btn.active { background: #0f1419; color: white; border-color: #0f1419; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 20px; }
+  .card { background: white; border: 1px solid #eff3f4; border-radius: 16px; padding: 16px; transition: transform 0.15s ease, box-shadow 0.15s ease; }
+  .card:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+  .card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .avatar { width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #1d9bf0, #0f1419); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 16px; object-fit: cover; flex-shrink: 0; }
+  img.avatar { background: #eee; }
+  .video-thumb { width: 100%; border-radius: 12px; margin-top: 8px; display: block; }
+  .real-data-banner { background: linear-gradient(135deg, #1d9bf0, #0f1419); color: white; padding: 12px 16px; border-radius: 12px; margin-bottom: 24px; font-size: 14px; }
+  .author { font-weight: bold; font-size: 15px; }
+  .handle { color: #536471; font-size: 14px; }
+  .platform-tag { font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-left: auto; font-weight: 600; }
+  .platform-x { background: #0f1419; color: white; }
+  .platform-li { background: #0a66c2; color: white; }
+  .post-text { font-size: 15px; line-height: 1.5; white-space: pre-wrap; margin-bottom: 12px; max-height: 280px; overflow: hidden; position: relative; }
+  .post-text.expanded { max-height: none; }
+  .show-more { color: #1d9bf0; cursor: pointer; font-size: 14px; }
+  .meta-row { display: flex; gap: 16px; color: #536471; font-size: 13px; margin-top: 12px; padding-top: 12px; border-top: 1px solid #eff3f4; flex-wrap: wrap; }
+  .meta-item { display: flex; gap: 4px; align-items: center; }
+  .meta-item strong { color: #0f1419; }
+  .archetype-badge { display: inline-block; font-size: 11px; padding: 2px 8px; background: #f7f9fa; border-radius: 4px; margin-bottom: 8px; color: #536471; font-weight: 600; }
+  .source-link { color: #1d9bf0; text-decoration: none; font-size: 13px; }
+  .source-link:hover { text-decoration: underline; }
+  .pattern-callout { background: #fefae0; border-left: 3px solid #f5a623; padding: 8px 12px; margin-top: 12px; font-size: 13px; border-radius: 4px; }
+  .pattern-callout strong { color: #b8860b; }
+  .legend { background: white; padding: 16px; border-radius: 12px; margin-top: 32px; font-size: 14px; }
+  .legend h3 { margin-bottom: 8px; font-size: 16px; }
+  .legend ul { padding-left: 20px; line-height: 1.8; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Launch Post Gallery</h1>
+<p class="subtitle">30+ verbatim launch posts. Click "Show more" to read full. Click the source link to see the live post.</p>
+
+<div class="real-data-banner">
+  <strong>Real founder profile pictures via unavatar.io</strong> — pulled live from public X profiles. Click any "→ source" link to verify the post on its native platform.
+</div>
+
+<div class="filter-bar">
+  <button class="filter-btn active" onclick="filter('all')">All</button>
+  <button class="filter-btn" onclick="filter('yc')">YC-style single tweet</button>
+  <button class="filter-btn" onclick="filter('origin')">Origin thread</button>
+  <button class="filter-btn" onclick="filter('fundraise')">Fundraise</button>
+  <button class="filter-btn" onclick="filter('teardown')">Teardown / reveal</button>
+  <button class="filter-btn" onclick="filter('leadmagnet')">Lead-magnet + upsell</button>
+  <button class="filter-btn" onclick="filter('agency')">Agency amplification</button>
+</div>
+
+<div class="grid" id="grid">
+
+<!-- HUMWORK -->
+<div class="card" data-archetype="yc">
+  <div class="archetype-badge">ARCHETYPE 1 · YC-style</div>
+  <div class="card-header">
+    <img class="avatar" src="images/yash-goenka-avatar.jpg" alt="Yash Goenka" />
+    <div>
+      <div class="author">Yash Goenka</div>
+      <div class="handle">@theyashgoenka</div>
+    </div>
+    <span class="platform-tag platform-x">X</span>
+  </div>
+  <div class="post-text">AI agents will pay you to chat with them.
+
+When AI agents hit a wall, Humwork's MCP server connects them to a verified domain expert in 30 seconds. Their experts include senior engineers, marketers, designers, and more.
+
+Three asks: developers building with AI agents — try us. Companies running internal agents — let's talk. Domain experts — join the network and get paid.
+
+founders@humwork.ai</div>
+  <div class="pattern-callout"><strong>Pattern:</strong> Inversion hook (humans pay AI → AI pays humans). 8-word future-tense punch + present-tense proof. Tri-segmented CTA.</div>
+  <div class="meta-row">
+    <span class="meta-item"><strong>1.7M</strong> campaign views</span>
+    <span class="meta-item">YC P26 / Spring 2026</span>
+    <a href="https://www.ycombinator.com/launches/PxH-humwork-connect-ai-agents-with-human-experts-in-30-seconds" class="source-link" target="_blank">→ source</a>
+  </div>
+</div>
+
+<!-- CRUNCHED -->
+<div class="card" data-archetype="yc leadmagnet">
+  <div class="archetype-badge">ARCHETYPE 1 · YC-style + comment-gated CTA</div>
+  <div class="card-header">
+    <img class="avatar" src="images/paul-avatar.jpg" alt="Philip Borge" onerror="this.outerHTML='<div class=\'avatar\'>PB</div>'" />
+    <div>
+      <div class="author">Philip Z. Borge</div>
+      <div class="handle">CEO Crunched · YC F25</div>
+    </div>
+    <span class="platform-tag platform-li">LinkedIn</span>
+  </div>
+  <div class="post-text">Today, we're proud to launch Crunched, the first Excel AI analyst built by and for Excel power users
+
+Backed by Y Combinator, we're bringing 10,000+ hours in Excel and AI together, tailoring Crunched to mgmt. consulting and finance workflows
+
+We've been quietly working with consulting, IB, and PE firms across Europe and the US for the past months. Now we're ready to share what we've built
+
+Crunched solves our own problem - Excel modeling is too slow and too error-prone. Michael Sakowski (or deal-Mike as he was known at McK due to his love of transactions and modeling) and I have done countless projects at McKinsey and other finance gigs.
+
+Solution = Crunched.
+- Crunched solves large cap PE-recruiting tests in under 10 minutes that takes top candidates 1h+
+- No more tedious grunt work, like manually typing and linking data from IMs or annual reports
+- And speed isn't the only thing - Crunched also runs comprehensive error-checks
+
+Our users are already reporting >2x productivity gains on modeling tasks. We're on a mission to make it 10x.
+
+-> Comment "Crunched" below, and we'll give you and your firm early access &lt;-</div>
+  <div class="pattern-callout"><strong>Pattern:</strong> "World's first" category claim + ICP narrowing + insider nickname ("deal-Mike") + comment-gated CTA drove 2.4K comments.</div>
+  <div class="meta-row">
+    <span class="meta-item"><strong>~3K</strong> reactions</span>
+    <span class="meta-item"><strong>~2.4K</strong> comments</span>
+    <a href="https://www.linkedin.com/posts/philip-z-borge-97690b149_today-were-proud-to-launch-crunched-the-activity-7386051293879975936-VX0X" class="source-link" target="_blank">→ source</a>
+  </div>
+</div>
+
+<!-- SNOWGLOBE -->
+<div class="card" data-archetype="yc">
+  <div class="archetype-badge">ARCHETYPE 1 · Category claim + analogy</div>
+  <div class="card-header">
+    <img class="avatar" src="images/shreya-rajpal-avatar.jpg" alt="Shreya Rajpal" />
+    <div>
+      <div class="author">Shreya Rajpal</div>
+      <div class="handle">@ShreyaR</div>
+    </div>
+    <span class="platform-tag platform-x">X</span>
+  </div>
+  <div class="post-text">Introducing ❄️ @snowglobe_so, the simulation engine for AI chatbots. Magically simulate the behavior of your users to test and improve your chatbots. Find failures before your users do.</div>
+  <div class="pattern-callout"><strong>Pattern:</strong> Emoji-as-logo (❄️). Category creation phrase. Contrarian closer ("before your users do"). LinkedIn version uses Waymo analogy — 20M real miles vs 20B sim miles.</div>
+  <div class="meta-row">
+    <span class="meta-item"><strong>~2.7K</strong> LinkedIn reactions</span>
+    <span class="meta-item"><strong>2M+</strong> campaign views</span>
+    <a href="https://x.com/ShreyaR/status/1956023326721368337" class="source-link" target="_blank">→ source</a>
+  </div>
+</div>
+
+<!-- LOVABLE 200M -->
+<div class="card" data-archetype="fundraise origin">
+  <div class="archetype-badge">ARCHETYPE 4 · Fundraise + origin</div>
+  <div class="card-header">
+    <img class="avatar" src="images/anton-osika-avatar.jpg" alt="Anton Osika" />
+    <div>
+      <div class="author">Anton Osika</div>
+      <div class="handle">@antonosika</div>
+    </div>
+    <span class="platform-tag platform-li">LinkedIn</span>
+  </div>
+  <div class="post-text">Today Lovable raised $200M at a $1.8B valuation led by Accel.
+
+I've never shared how it started: I called my friend at 6AM to go for a walk...
+
+I was CTO at Depict. We hit $1M ARR faster than any Swedish startup people heard of. But after 3 years, something felt off.
+
+In 2023, after ChatGPT 3 had just released, I started exploring what complex systems you could build with AI. One weekend, I hacked together something simple: 'plain english to working app.' I called it GPT Engineer. Posted it on GitHub. Went to sleep.
+
+I woke up to chaos. Over the next few weeks it got hundreds of thousands of users. 50k+ GitHub stars in weeks. My inbox was destroyed. But the messages weren't from developers. They were from people who'd never coded before, building their first apps. That's when it clicked.
+
+The real insight: 99% of the world's best ideas are trapped in the heads of people who can't code.
+
+6AM. I called Fabian: 'Let's go for a walk, I have an idea.' By 8AM, we'd decided to start a company together. Not to make coding easier. To make it obsolete.
+
+Before Canva, there were only 5M 'designers' that used Photoshop. Canva 44x'd the market to 220M designers. Lovable is doing the same for code.
+
+We're helping everyone realize they have things to build.</div>
+  <div class="pattern-callout"><strong>Pattern:</strong> Number-first hook → "never shared" tease → 6AM scene → GitHub-weekend lightning moment → Canva analogy (5M → 220M = 44x) → customer-proof triple → platform thesis closer.</div>
+  <div class="meta-row">
+    <span class="meta-item"><strong>~24K</strong> reactions</span>
+    <span class="meta-item"><strong>~1.7K</strong> comments</span>
+    <a href="https://www.linkedin.com/posts/antonosika_today-lovable-raised-200m-at-a-18b-valuation-activity-7351665204838985728-LJs6" class="source-link" target="_blank">→ source</a>
+  </div>
+</div>
+
+<!-- DEEL -->
+<div class="card" data-archetype="fundraise origin">
+  <div class="archetype-badge">ARCHETYPE 4 · Fundraise + pivot story</div>
+  <div class="card-header">
+    <img class="avatar" src="images/alex-bouaziz-avatar.jpg" alt="Alex Bouaziz" />
+    <div>
+      <div class="author">Alex Bouaziz</div>
+      <div class="handle">@Bouazizalex · CEO Deel</div>
+    </div>
+    <span class="platform-tag platform-li">LinkedIn</span>
+  </div>
+  <div class="post-text">Deel has raised $300M at a $17.3B valuation Shuo and I started about 6 years ago, struggling to even make $10K I've never shared this before because of how embarrassing our start was.
+
+1/ Shuo and I were in completely different worlds. She was in China, I was in Israel. Both my parents family emigrated from North Africa with nothing.
+
+2/ Our original idea was to ensure freelancers get paid and not ghosted after delivering work.
+
+3/ We pitched Reddit freelancers our milestone-based contracts. Nobody cared.
+
+4/ We entered pivot hell. I started being a collection agency for freelancers. We recovered $7,000 from a $15,000 invoice after my email. The freelancer gave us $1,000. That was a huge WIN.
+
+5/ We thought we'd found product market fit. But we never collected another dollar.
+
+6/ Then a YC batchmate from Sunsama used our product differently. "I like tying contracts to payments and having payment happen as work gets done."
+
+7/ We listened to the customer and pivoted to a contracts product.
+
+8/ Within ten days, on Demo Day we had 290 contractors, $5,000 monthly revenue.
+
+(skipped 9 — human touch)
+
+10/ Throughout this time, I've had hundreds of customers on WhatsApp and Slack. Our customers told us what their bigger problems were.
+
+11-13/ We launched Employer of Record ($300M+ business). Then Payroll ($150M+). Then 6 more products in 18 months. Hit $1bn ARR.
+
+All good things start small and shaky.</div>
+  <div class="pattern-callout"><strong>Pattern:</strong> Pivot hell + specific embarrassing $7K anecdote + skipped-9 numbering (human touch) + verbatim customer quote as pivot trigger + "All good things start small and shaky" closer.</div>
+  <div class="meta-row">
+    <span class="meta-item"><strong>~14K</strong> reactions</span>
+    <span class="meta-item"><strong>~1.4K</strong> comments</span>
+    <a href="https://www.linkedin.com/posts/alexbouaziz_deel-has-raised-300m-at-a-173b-valuation-activity-7384573205698568193" class="source-link" target="_blank">→ source</a>
+  </div>
+</div>
+
+<!-- BOLT -->
+<div class="card" data-archetype="teardown">
+  <div class="archetype-badge">ARCHETYPE 3 · Anti-hook hook</div>
+  <div class="card-header">
+    <img class="avatar" src="images/bolt-avatar.jpg" alt="Bolt.new" />
+    <div>
+      <div class="author">Bolt.new</div>
+      <div class="handle">@boltdotnew</div>
+    </div>
+    <span class="platform-tag platform-x">X</span>
+  </div>
+  <div class="post-text">what do you want to build?
+
+[43-second demo video]</div>
+  <div class="pattern-callout"><strong>Pattern:</strong> Five-word lowercase hook. Doubles as the product UI's empty-state prompt. The demo video IS the post. Day 1 → $60K ARR. Week 1 → $1M ARR.</div>
+  <div class="meta-row">
+    <span class="meta-item"><strong>$1M ARR</strong> in week 1</span>
+    <span class="meta-item"><strong>$4M ARR</strong> in month 1</span>
+    <a href="https://x.com/boltdotnew/status/1841873251313844631" class="source-link" target="_blank">→ source</a>
+  </div>
+</div>
+
+<!-- DEVIN -->
+<div class="card" data-archetype="teardown">
+  <div class="archetype-badge">ARCHETYPE 3 · Benchmark hook</div>
+  <div class="card-header">
+    <img class="avatar" src="images/cognition-avatar.jpg" alt="Cognition Labs" />
+    <div>
+      <div class="author">Cognition Labs</div>
+      <div class="handle">@cognition_labs</div>
+    </div>
+    <span class="platform-tag platform-x">X</span>
+  </div>
+  <div class="post-text">Today we're excited to introduce Devin, the first AI software engineer.
+
+Devin is a tireless, skilled teammate, equally ready to build alongside you or independently complete tasks for you to review.
+
+Devin correctly resolves 13.86%* of the issues end-to-end, far exceeding the previous state-of-the-art of 1.96%.</div>
+  <div class="pattern-callout"><strong>Pattern:</strong> "First [category]" + benchmark vs SOTA (13.86% vs 1.96% = 7x) + autonomous-agent demo. Patrick Collison QRT amplified it. 30M+ video views.</div>
+  <div class="meta-row">
+    <span class="meta-item"><strong>30M+</strong> demo views</span>
+    <a href="https://cognition.ai/blog/introducing-devin" class="source-link" target="_blank">→ blog</a>
+  </div>
+</div>
+
+<!-- CLUELY -->
+<div class="card" data-archetype="origin">
+  <div class="archetype-badge">ARCHETYPE 2 · Consequence-as-credential</div>
+  <div class="card-header">
+    <div class="avatar">RL</div>
+    <div>
+      <div class="author">Roy Lee</div>
+      <div class="handle">CEO Cluely</div>
+    </div>
+    <span class="platform-tag platform-li">LinkedIn</span>
+  </div>
+  <div class="post-text">I got kicked out of Columbia for building an AI that cheats on coding interviews. Now, we raised $5.3 million to build Cluely, a cheating tool for literally everything.
+
+A completely undetectable AI that sees your screen, hears your audio, and gives you real-time assistance in any situation. Interviews, assessments, tests, sales calls, meetings, everything.
+
+And I don't think it's cheating.
+
+Every single time technology has made people smarter, the world panics. But there's a difference. Humanity is at the inflection point. AI will transform the entire world.
+
+Cluely is the bridge to a world where humans don't compete with machines. We grow with them.</div>
+  <div class="pattern-callout"><strong>Pattern:</strong> 14-word consequence-as-credential hook. Provocative positioning ("cheating tool") with immediate reframe ("I don't think it's cheating"). Manifesto close. Video: viral dating-interview demo.</div>
+  <div class="meta-row">
+    <span class="meta-item"><strong>~6K</strong> LinkedIn likes</span>
+    <span class="meta-item"><strong>$5.3M</strong> seed</span>
+    <a href="https://www.youtube.com/watch?v=k50fTrT8q8o" class="source-link" target="_blank">→ deconstructed by Renat</a>
+  </div>
+</div>
+
+<!-- ICON ROSETTA STONE -->
+<div class="card" data-archetype="leadmagnet">
+  <div class="archetype-badge">ARCHETYPE 5 · ROSETTA STONE</div>
+  <div class="card-header">
+    <img class="avatar" src="images/kennan-davison-avatar.jpg" alt="Kennan Davison" />
+    <div>
+      <div class="author">Kennan Davison</div>
+      <div class="handle">CEO Icon · co-founder Social Capital Inc</div>
+    </div>
+    <span class="platform-tag platform-li">LinkedIn</span>
+  </div>
+  <div class="post-text">Introducing Icon, the world's first AI Admaker.
+
+We're backed by Peter Thiel's Foundation and other investors.
+
+Icon is like ChatGPT + CapCut, but for winning ads with AI in minutes.
+
+Here's how it works (4 steps): upload assets → talk to ChatGPT → Icon finds clips → edit like CapCut.
+
+A 3-person creative team makes 30 ads/month. With Icon, they make 300.
+
+Used by Ridge, Jones Road, Immi, Backbone, MUD\WTR — all $100M+ revenue brands.
+
+$399/month vs competitors at $2K-$30K/month.
+
+Drop a comment "icon" to get our free Google Drive with 1,000 winning ads from brands doing $20M+ in revenue.</div>
+  <div class="pattern-callout"><strong>Pattern:</strong> The 7-beat template Social Capital Inc pitches. Category claim → analogy bridge → investor → quantified value (10x) → social-proof brands → price wedge → public lead magnet INSIDE the post. ~10K comments.</div>
+  <div class="meta-row">
+    <span class="meta-item"><strong>~10K</strong> comments</span>
+    <span class="meta-item"><strong>tens of M</strong> views</span>
+    <a href="https://community.startuptalky.com/discussions/post/this-guy-recently-blew-past-5-p859hLkjVkUrAak" class="source-link" target="_blank">→ breakdown</a>
+  </div>
+</div>
+
+<!-- TRAVA -->
+<div class="card" data-archetype="yc">
+  <div class="archetype-badge">ARCHETYPE 1 · Stealth-emergence</div>
+  <div class="card-header">
+    <img class="avatar" src="images/pushkar-avatar.jpg" alt="Pushkar Lanka" />
+    <div>
+      <div class="author">Pushkar Lanka</div>
+      <div class="handle">CEO Trava · ex-Plaid, Meta</div>
+    </div>
+    <span class="platform-tag platform-li">LinkedIn</span>
+  </div>
+  <div class="post-text">After months of building in stealth, I'm excited to introduce Trava, the AI compliance engine built for importers.
+
+Global trade powers America's economy, but our supply chains are fragile, driving up costs for businesses and consumers. US importers are on pace to pay over $200B in duties this year, a record high.
+
+Brokers are overloaded, tariffs shift constantly, and importers bear the liability for filing errors that directly hit their margin. Meanwhile, there simply aren't enough experts to keep up.
+
+Trava changes this. By pairing AI with human expertise, we help importers protect margin, reduce risk, and save time.
+
+In our first audits, we've uncovered significant refunds in days. Savings that would have otherwise taken months to find or been missed entirely.
+
+Long term, Trava is building the AI infrastructure for trade compliance.
+
+If you oversee compliance or finance and want to see what Trava can uncover, send me a note or join the waitlist on our website.</div>
+  <div class="pattern-callout"><strong>Pattern:</strong> Stealth-reveal hook + memorable market stat ($200B) + 3-part pain list + traction proof + role-targeted DM CTA.</div>
+  <div class="meta-row">
+    <span class="meta-item"><strong>~230</strong> reactions</span>
+    <a href="https://www.linkedin.com/posts/pushkarlanka_after-months-of-building-in-stealth-im-activity-7374503251221573632-xXCF" class="source-link" target="_blank">→ source</a>
+  </div>
+</div>
+
+<!-- MATT EPSTEIN MOM TEST -->
+<div class="card" data-archetype="leadmagnet agency">
+  <div class="archetype-badge">ARCHETYPE 5 · Free framework + agency funnel</div>
+  <div class="card-header">
+    <img class="avatar" src="images/matt-epstein-avatar.jpg" alt="Matt Epstein" />
+    <div>
+      <div class="author">Matt Epstein</div>
+      <div class="handle">@MattEpstein16 · founder Shown Media</div>
+    </div>
+    <span class="platform-tag platform-x">X</span>
+  </div>
+  <div class="post-text">This year my launch videos did 50M+ views. Every single script… every positioning angle… every "this is how the product works" moment… Was written by my 61 year old mother who barely knows how to use an Iphone. I call it The Mom Test (steal it)</div>
+  <div class="pattern-callout"><strong>Pattern:</strong> Lead with receipt (50M views) → absurd contrast (61yo mom can't use iPhone) → named framework ("The Mom Test") → "(steal it)" weaponized generosity. The flex IS the agency pitch.</div>
+  <div class="meta-row">
+    <span class="meta-item">launch agency founder</span>
+    <a href="https://x.com/MattEpstein16/status/1998065558940536887" class="source-link" target="_blank">→ source</a>
+  </div>
+</div>
+
+<!-- GAMMA -->
+<div class="card" data-archetype="fundraise">
+  <div class="archetype-badge">ARCHETYPE 4 · Fundraise + ratio invention</div>
+  <div class="card-header">
+    <img class="avatar" src="images/grant-lee-avatar.jpg" alt="Grant Lee" />
+    <div>
+      <div class="author">Grant Lee</div>
+      <div class="handle">@thisisgrantlee · CEO Gamma</div>
+    </div>
+    <span class="platform-tag platform-x">X</span>
+  </div>
+  <div class="post-text">Today, as shared by The New York Times, we're announcing two things:
+
+> Our Series B at a $2.1B valuation led by @sarahdingwang at @a16z.
+> Reaching $100M ARR, profitably, with a team of just 50 people.
+
+That's $2M ARR per employee.
+
+PowerPoint was invented before the first website...</div>
+  <div class="pattern-callout"><strong>Pattern:</strong> NYT name-drop = delegated credibility. Two-item announce. Then "$2M ARR per employee" — invented ratio that nobody else uses, becomes the quotable.</div>
+  <div class="meta-row">
+    <span class="meta-item">$2.1B valuation</span>
+    <span class="meta-item">$100M ARR</span>
+    <a href="https://x.com/thisisgrantlee/status/1987880600661889356" class="source-link" target="_blank">→ source</a>
+  </div>
+</div>
+
+<!-- SUPABASE -->
+<div class="card" data-archetype="yc">
+  <div class="archetype-badge">ARCHETYPE 1 · Title-as-positioning (HN era)</div>
+  <div class="card-header">
+    <img class="avatar" src="images/paul-avatar.jpg" alt="Paul Copplestone" />
+    <div>
+      <div class="author">Paul Copplestone</div>
+      <div class="handle">@kiwicopple · founder Supabase</div>
+    </div>
+    <span class="platform-tag" style="background:#ff6600; color:white;">HN</span>
+  </div>
+  <div class="post-text">Supabase (YC S20) – An open source Firebase alternative</div>
+  <div class="pattern-callout"><strong>Pattern:</strong> The TITLE alone did 90% of the work. "Open source [category leader] alternative" — 6 words. Took Supabase from 80 → 800 users overnight.</div>
+  <div class="meta-row">
+    <span class="meta-item"><strong>1,120</strong> HN points (#2 of all time)</span>
+    <a href="https://news.ycombinator.com/item?id=23319901" class="source-link" target="_blank">→ source</a>
+  </div>
+</div>
+
+<!-- RESEND -->
+<div class="card" data-archetype="yc">
+  <div class="archetype-badge">ARCHETYPE 1 · YC HN classic</div>
+  <div class="card-header">
+    <img class="avatar" src="images/zeno-avatar.jpg" alt="Zeno Rocha" />
+    <div>
+      <div class="author">Zeno Rocha</div>
+      <div class="handle">@zenorocha · founder Resend</div>
+    </div>
+    <span class="platform-tag" style="background:#ff6600; color:white;">HN</span>
+  </div>
+  <div class="post-text">Hi HN! I'm Zeno, founder of Resend. We're building a modern email sending platform focused on providing the best developer experience.
+
+The major players (SendGrid, Mailgun, Postmark, SparkPost) were all founded 2009-2010. Nobody is building an exceptional developer experience.
+
+We need to stop developing emails like it's 2010 and rethink how email can be done in 2023 and beyond.</div>
+  <div class="pattern-callout"><strong>Pattern:</strong> Names competitors by name → flips "crowded market" objection → personal "I" voice → time-anchor closer ("like it's 2010"). Companion X tweet hit 1M+ views.</div>
+  <div class="meta-row">
+    <span class="meta-item"><strong>1M+</strong> X views on companion tweet</span>
+    <a href="https://news.ycombinator.com/item?id=36309120" class="source-link" target="_blank">→ source</a>
+  </div>
+</div>
+
+<!-- BILANC -->
+<div class="card" data-archetype="yc">
+  <div class="archetype-badge">ARCHETYPE 1 · Cautionary tale (weak post, strong video)</div>
+  <div class="card-header">
+    <div class="avatar" style="background:linear-gradient(135deg,#7c3aed,#0f1419);">SA</div>
+    <div>
+      <div class="author">Samuel Akinwunmi</div>
+      <div class="handle">CEO Bilanc · YC W24</div>
+    </div>
+    <span class="platform-tag platform-li">LinkedIn</span>
+  </div>
+  <div class="post-text">🚀 Launching Bilanc (YC W24): AI-Powered Engineering Productivity
+
+We've built the most powerful engineering leadership copilot, and today I couldn't be more excited to share it with the world.
+
+Everyday we are analysing millions of lines of code, generating hundreds of reports and recommendations.
+
+Bilanc is the most robust and thorough engineering data platform on the market, trusted by incredible engineering leaders and teams at companies like GoFundMe, Runway, and many more.
+
+We'd love to speak with anyone who finds this problem interesting. It's all we think about! Bilanc to the world!!!! 🚀🚀🚀🚀</div>
+  <div class="pattern-callout"><strong>Pattern:</strong> The video is excellent ("50 commits beats five commits, right?"). The POST is corporate boilerplate. Pulled 100K views and ~880 reactions DESPITE the weak post. Lesson: a weak post + great video can still hit, but leaves 2-3x on the table.</div>
+  <div class="meta-row">
+    <span class="meta-item"><strong>~880</strong> reactions</span>
+    <span class="meta-item"><strong>~100K</strong> views</span>
+    <a href="https://www.linkedin.com/posts/0x-s13i_launching-bilanc-yc-w24-ai-powered-activity-7396532687932395520-gJiS" class="source-link" target="_blank">→ source</a>
+  </div>
+</div>
+
+<!-- CHASI -->
+<div class="card" data-archetype="origin">
+  <div class="archetype-badge">ARCHETYPE 2 · YC announce + field-research origin</div>
+  <div class="card-header">
+    <img class="avatar" src="images/akash-pavan-avatar.jpg" alt="Akash Pavan" />
+    <div>
+      <div class="author">Akash Pavan</div>
+      <div class="handle">CEO Chasi · YC W26</div>
+    </div>
+    <span class="platform-tag platform-li">LinkedIn</span>
+  </div>
+  <div class="post-text">Chasi is now part of Y Combinator's Winter 2026 batch! YC has backed companies like Airbnb, DoorDash, EquipmentShare (and a lot of the most important startups of the last 20 years).
+
+Over the last few months, Sarman Aulakh and I have traveled thousands of miles across North America, meeting the people who keep the real economy running, teams selling, renting, or leasing everything from mining trucks to forklifts to power tools.
+
+The real built world doesn't want more software. They hate updating CRMs/ERPs.
+
+History shows: when you remove friction and improve how goods + information flow (roads, rail, electricity, the internet), people build more, waste less, and create abundance. We believe AI is the next major commerce enabler.
+
+We're just getting started!</div>
+  <div class="pattern-callout"><strong>Pattern:</strong> YC stamp + third-name-as-vertical-tell (Airbnb / DoorDash / EquipmentShare) + field-research narrative + historical parallel (roads/rail/electricity/internet) + "just getting started" closer.</div>
+  <div class="meta-row">
+    <span class="meta-item"><strong>~460</strong> reactions</span>
+    <a href="https://www.linkedin.com/posts/akashpavan_chasi-is-now-part-of-y-combinators-winter-activity-7415592618237341696-B74k" class="source-link" target="_blank">→ source</a>
+  </div>
+</div>
+
+</div>
+
+<div class="legend">
+<h3>How to read this gallery</h3>
+<ul>
+  <li><strong>Click "→ source"</strong> on any card to read the full live post on its native platform.</li>
+  <li><strong>Filter by archetype</strong> to compare patterns within a single launch type.</li>
+  <li><strong>Pattern callouts (yellow)</strong> name the specific tactic that made the post work — steal these.</li>
+  <li><strong>Engagement numbers</strong> are public at time of capture (April 2026).</li>
+  <li><strong>Bilanc</strong> is included as a cautionary tale — strong video, weak post.</li>
+  <li><strong>Icon</strong> is the rosetta stone — the 7-beat template Social Capital Inc pitches to clients.</li>
+</ul>
+</div>
+
+</div>
+
+<script>
+function filter(archetype) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('.card').forEach(card => {
+    if (archetype === 'all' || card.dataset.archetype.includes(archetype)) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+</script>
+
+</body>
+</html>

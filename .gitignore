@@ -1,0 +1,14 @@
+.DS_Store
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+node_modules/
+.env
+.env.local
+*.log
+.cache/
+
+# Internal strategy / drafting notes — not for public repo
+RENAT-ENGAGEMENT-POST.md
