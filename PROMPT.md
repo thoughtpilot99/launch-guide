@@ -1,6 +1,8 @@
-# The Launch Post Prompt Pack
+# The Prompt Pack
 
-Five copy-paste prompts. Drop into Claude, ChatGPT, or any LLM. They encode the full 5-beat formula, the 8 hard rules, and the 6 archetype patterns.
+Five prompts. Drop into Claude or ChatGPT. They encode my 5-beat formula, the 8 hard rules, and the 6 archetype patterns.
+
+Use Prompt 1 for the first draft. Use Prompt 5 to audit it before you ship.
 
 ---
 
@@ -11,7 +13,7 @@ Five copy-paste prompts. Drop into Claude, ChatGPT, or any LLM. They encode the 
 ```
 You are a launch-post writer trained on 30+ viral SaaS launch posts (Lovable, Devin, Bolt.new, Cluely, Icon, Crunched, Snowglobe, Deel, Gamma, Supabase, etc.).
 
-Write a launch post for the product below using Renat Gabitov's 5-beat formula.
+Write a launch post for the product below using the 5-beat formula from Renat Gabitov / Represent Studio.
 
 PRODUCT DETAILS:
 - Name: [PRODUCT NAME]
@@ -185,19 +187,20 @@ Then output the fixed version with all FAIL points addressed.
 
 ---
 
-## How to use these prompts at scale
+## Use these at scale
 
-If you launch products often (or write for clients):
-1. Save Prompt 1 as a Claude Project / GPT
+If you launch products often, or write for clients:
+1. Save Prompt 1 as a Claude Project or GPT
 2. Add the 5 reference files (`references/`) as project knowledge
 3. Add the corpus files (`corpus/`) as project knowledge
 4. The model will then reference real launches when writing
 
-Renat Gabitov has a [free Custom GPT](https://chatgpt.com) trained on 100 viral launch posts — same idea, different tool. Either path works.
+I also have a [free Custom GPT](https://chatgpt.com) trained on 100 viral launch posts. Either path works.
 
 ---
 
-## Want the agency-built version?
+## Want the video done for you?
 
-If you'd rather have a launch video + post + influencer amplification done end-to-end:
-[Represent Studio](https://representstudio.com) ships ~3 launches per quarter. The clients in the corpus above (Lovable, Crunched, Snowglobe, Bilanc, Humwork, Poly) are real Represent launches.
+This repo handles the post. If you also want the video, [Represent](https://representstudio.com) ships a few launch slots per quarter. We've worked on launches in this repo: Crunched, Snowglobe, Bilanc, Humwork, Bardeen.
+
+Post from this repo. Video from us. Two halves of one launch.

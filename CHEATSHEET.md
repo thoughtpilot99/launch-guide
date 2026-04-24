@@ -1,6 +1,6 @@
-# The Launch Post Cheatsheet
+# Launch Post Cheatsheet
 
-**One page. Print it. Pin it.**
+One page. Print it. Pin it.
 
 ---
 
@@ -152,4 +152,4 @@ Steal these. Customize the noun:
 
 ---
 
-*Repo: github.com/[your-handle]/launch-post-playbook · License: MIT*
+*Built by Renat Gabitov / [Represent](https://representstudio.com) · License: MIT*

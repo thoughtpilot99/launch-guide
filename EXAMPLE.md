@@ -1,6 +1,6 @@
 # Worked Example — Formula → Real Draft
 
-The best way to understand the playbook is to see the formula applied in real time. Here's a fictional product taken from blank page → ship-ready post in 5 minutes.
+Best way to understand the formula is to watch it land. Here's a fictional product taken from blank page to ship-ready post in 5 minutes.
 
 ---
 
@@ -205,6 +205,8 @@ Now Maya's launch tweet has some traction. Day 2, she ships the origin thread to
 
 ## Use this example as a template
 
-Replace "Tally" with your product. Replace "sales reports" with your category. Replace "Maya / Salesforce" with your founder story.
+Swap "Tally" for your product. Swap "sales reports" for your category. Swap "Maya / Salesforce" for your founder story.
 
-Then run the [pre-ship auditor prompt](PROMPT.md#prompt-5--the-pre-ship-auditor) to catch what you missed.
+Then run [Prompt 5 — The Pre-Ship Auditor](PROMPT.md#prompt-5--the-pre-ship-auditor) to catch what you missed.
+
+That's it. Now go ship.
