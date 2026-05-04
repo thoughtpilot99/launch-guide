@@ -129,7 +129,15 @@ Read [LAUNCH-WEEK-SCHEDULE.md](LAUNCH-WEEK-SCHEDULE.md). A real launch is 10+ po
 [FAQ.md](FAQ.md). Covers consumer apps, PH launches, stealth reveals, tiny audiences, ghostwriters, and what to do when a launch fails.
 
 ### If you're using Claude Code
-Drop this repo into `~/.claude/skills/launch-guide/`. It auto-triggers when you ask for a launch post.
+This repo ships with a ready-to-install [Claude Code skill](https://claude.com/claude-code). One command from the repo root:
+
+```bash
+./install.sh
+```
+
+Or drag-and-drop: copy the `skill/launch-posts-writer/` folder into `~/.claude/skills/` and restart Claude Code.
+
+Once installed, the skill auto-triggers when you ask for a launch post, YC announcement, fundraise post, agency amplification post, etc. Full details in [skill/launch-posts-writer/README.md](skill/launch-posts-writer/README.md).
 
 ---
 
@@ -147,6 +155,13 @@ launch-guide/
 ├── ANTI-PATTERNS.md          Do-not-ship list
 ├── FAQ.md                    Common questions
 ├── SOURCES.md                Clickable URL index of every launch
+├── install.sh                One-line installer for the Claude Code skill
+├── skill/
+│   └── launch-posts-writer/  Self-contained Claude Code skill (drag into ~/.claude/skills/)
+│       ├── SKILL.md
+│       ├── references/
+│       ├── templates/
+│       └── corpus/
 ├── corpus/                   30+ verbatim launches deconstructed
 │   ├── INDEX.md              Browse by archetype
 │   ├── 18-renat-primary-formula.md   My own video deconstructed (the spine)
